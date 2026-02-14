@@ -1,5 +1,4 @@
 import {
-  Heart,
   Presentation,
   Scale,
   Shield,
@@ -13,8 +12,7 @@ export const courses: Course[] = [
   {
     id: 1,
     title: "Incident Response Training Day",
-    subheader:
-      "For teams that want to apply their already in place training to real world scenarios.",
+    subheader: "",
     duration: "4 hours",
     type: "scenario-based",
     description:
@@ -32,29 +30,8 @@ export const courses: Course[] = [
   },
   {
     id: 2,
-    title: "Fundamentals of Medical Emergencies",
-    subheader:
-      "This course is for teams that want the basic understanding of how to care for someone undergoing a true medical emergency.",
-    duration: "4 hours",
-    type: "hands-on",
-    description:
-      "The intention of this course is to give teams a very basic understanding of supplying first aid to someone having a medical emergency. This course will include a basic CPR course combined with a Stop the Bleed course. The goal is to give teams a strong foundation for a worst case scenario.",
-    topics: [
-      "CPR certification training",
-      "Stop the Bleed techniques",
-      "AED operation and placement",
-      "Wound assessment and triage",
-      "Medical emergency action plans",
-      "Equipment familiarization",
-    ],
-    icon: Heart,
-    image: "/images/course-medical.jpg",
-  },
-  {
-    id: 3,
     title: "Fundamentals of Armed Church Security",
-    subheader:
-      "This course is aimed at providing church security teams with some of the core principles needed in protecting their church.",
+    subheader: "",
     duration: "4 hours",
     type: "hands-on",
     description:
@@ -71,10 +48,9 @@ export const courses: Course[] = [
     image: "/images/course-armed.jpg",
   },
   {
-    id: 4,
+    id: 3,
     title: "Active Shooter Presentation",
-    subheader:
-      "This course is designed to give teams a foundational understanding of safe, practical response options during an active shooter situation.",
+    subheader: "",
     duration: "2 hours",
     type: "classroom",
     description:
@@ -91,10 +67,9 @@ export const courses: Course[] = [
     image: "/images/course-presentation.jpg",
   },
   {
-    id: 5,
+    id: 4,
     title: "Active Shooter Scenario Training",
-    subheader:
-      "This course is designed to give teams a real life blueprint of how an active shooter may present itself within their building.",
+    subheader: "",
     duration: "4 hours",
     type: "scenario-based",
     description:
@@ -111,10 +86,9 @@ export const courses: Course[] = [
     image: "/images/course-scenario.jpg",
   },
   {
-    id: 6,
+    id: 5,
     title: "Understanding Church Lawsuits",
-    subheader:
-      "This course is designed to give teams an understanding of why churches are sued, how these lawsuits are viewed, and how we can best prevent this in your building.",
+    subheader: "",
     duration: "1 hour",
     type: "classroom",
     description:
