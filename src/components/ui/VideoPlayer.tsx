@@ -11,12 +11,6 @@ interface VideoPlayerProps {
   children?: React.ReactNode;
 }
 
-function formatTime(seconds: number): string {
-  const m = Math.floor(seconds / 60);
-  const s = Math.floor(seconds % 60);
-  return `${m}:${s.toString().padStart(2, "0")}`;
-}
-
 export default function VideoPlayer({
   src,
   poster,
@@ -25,19 +19,13 @@ export default function VideoPlayer({
   children,
 }: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const progressRef = useRef<HTMLDivElement>(null);
   const hideTimerRef = useRef<ReturnType<typeof setTimeout>>(null);
 
   const [playing, setPlaying] = useState(true);
   const [muted, setMuted] = useState(true);
   const [volume, setVolume] = useState(0.7);
-  const [progress, setProgress] = useState(0);
-  const [buffered, setBuffered] = useState(0);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
   const [showControls, setShowControls] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const [isDragging, setIsDragging] = useState(false);
   const [showVolumeSlider, setShowVolumeSlider] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -46,39 +34,8 @@ export default function VideoPlayer({
     if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
     setShowControls(true);
     hideTimerRef.current = setTimeout(() => {
-      if (!isDragging) setShowControls(false);
+      setShowControls(false);
     }, 3000);
-  }, [isDragging]);
-
-  // Sync video state
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const onTimeUpdate = () => {
-      setCurrentTime(video.currentTime);
-      setProgress(video.duration ? (video.currentTime / video.duration) * 100 : 0);
-    };
-
-    const onLoadedMetadata = () => {
-      setDuration(video.duration);
-    };
-
-    const onProgress = () => {
-      if (video.buffered.length > 0) {
-        setBuffered((video.buffered.end(video.buffered.length - 1) / video.duration) * 100);
-      }
-    };
-
-    video.addEventListener("timeupdate", onTimeUpdate);
-    video.addEventListener("loadedmetadata", onLoadedMetadata);
-    video.addEventListener("progress", onProgress);
-
-    return () => {
-      video.removeEventListener("timeupdate", onTimeUpdate);
-      video.removeEventListener("loadedmetadata", onLoadedMetadata);
-      video.removeEventListener("progress", onProgress);
-    };
   }, []);
 
   // Sync volume
@@ -121,41 +78,6 @@ export default function VideoPlayer({
     if (val === 0) setMuted(true);
   };
 
-  const handleProgressClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    const video = videoRef.current;
-    const bar = progressRef.current;
-    if (!video || !bar) return;
-    const rect = bar.getBoundingClientRect();
-    const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
-    video.currentTime = pct * video.duration;
-  };
-
-  const handleProgressDrag = useCallback(
-    (e: MouseEvent) => {
-      const video = videoRef.current;
-      const bar = progressRef.current;
-      if (!video || !bar) return;
-      const rect = bar.getBoundingClientRect();
-      const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
-      video.currentTime = pct * video.duration;
-    },
-    []
-  );
-
-  const handleDragStart = (e: React.MouseEvent<HTMLDivElement>) => {
-    setIsDragging(true);
-    handleProgressClick(e);
-
-    const onMove = (ev: MouseEvent) => handleProgressDrag(ev);
-    const onUp = () => {
-      setIsDragging(false);
-      window.removeEventListener("mousemove", onMove);
-      window.removeEventListener("mouseup", onUp);
-    };
-    window.addEventListener("mousemove", onMove);
-    window.addEventListener("mouseup", onUp);
-  };
-
   const toggleFullscreen = async () => {
     if (!containerRef.current) return;
     if (document.fullscreenElement) {
@@ -171,9 +93,7 @@ export default function VideoPlayer({
       className={cn("relative group", className)}
       onMouseMove={resetHideTimer}
       onMouseEnter={resetHideTimer}
-      onMouseLeave={() => {
-        if (!isDragging) setShowControls(false);
-      }}
+      onMouseLeave={() => setShowControls(false)}
     >
       {/* Video element */}
       <video
@@ -231,29 +151,6 @@ export default function VideoPlayer({
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none" />
 
             <div className="relative px-4 pb-4 pt-10">
-              {/* Progress bar */}
-              <div
-                ref={progressRef}
-                className="w-full h-1 bg-white/20 rounded-full cursor-pointer mb-3 group/progress hover:h-1.5 transition-all duration-150"
-                onMouseDown={handleDragStart}
-              >
-                {/* Buffered */}
-                <div
-                  className="absolute top-0 left-0 h-full bg-white/20 rounded-full pointer-events-none"
-                  style={{ width: `${buffered}%` }}
-                />
-                {/* Progress */}
-                <div
-                  className="absolute top-0 left-0 h-full bg-gold rounded-full pointer-events-none"
-                  style={{ width: `${progress}%` }}
-                />
-                {/* Scrubber dot */}
-                <div
-                  className="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-gold rounded-full opacity-0 group-hover/progress:opacity-100 transition-opacity duration-150 pointer-events-none shadow-lg"
-                  style={{ left: `${progress}%`, transform: `translate(-50%, -50%)` }}
-                />
-              </div>
-
               {/* Controls row */}
               <div className="flex items-center gap-3">
                 {/* Play / Pause */}
@@ -268,11 +165,6 @@ export default function VideoPlayer({
                     <Play className="w-5 h-5" fill="currentColor" />
                   )}
                 </button>
-
-                {/* Time */}
-                <span className="text-xs text-off-white/70 font-mono tabular-nums min-w-[70px]">
-                  {formatTime(currentTime)} / {formatTime(duration)}
-                </span>
 
                 {/* Spacer */}
                 <div className="flex-1" />
