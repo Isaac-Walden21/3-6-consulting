@@ -3,6 +3,7 @@ import type { LucideIcon } from "lucide-react";
 export interface Course {
   id: number;
   title: string;
+  subheader: string;
   duration: string;
   type: "scenario-based" | "hands-on" | "classroom";
   description: string;

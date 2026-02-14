@@ -45,6 +45,11 @@ export default function CourseCard({ course, index, reversed }: CourseCardProps)
               {course.title}
             </h3>
 
+            {/* Subheader */}
+            <p className="text-gold text-sm italic mt-2">
+              {course.subheader}
+            </p>
+
             {/* Badges */}
             <div className="flex flex-wrap gap-2 mt-3">
               <Badge variant="gold">{course.duration}</Badge>

@@ -31,6 +31,10 @@ export default function CourseOverview() {
                   {course.title}
                 </h3>
 
+                <p className="text-gold text-xs italic mt-1 line-clamp-2">
+                  {course.subheader}
+                </p>
+
                 <div className="flex gap-2 mt-2">
                   <Badge variant="slate">{course.duration}</Badge>
                   <Badge variant="gold">{course.type}</Badge>
