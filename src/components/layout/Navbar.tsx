@@ -76,9 +76,9 @@ export default function Navbar() {
         )}
       >
         {/* Logo */}
-        <Link to="/" className="flex items-baseline gap-1.5 shrink-0">
-          <span className="font-heading text-gold text-3xl leading-none">3-6</span>
-          <span className="font-heading text-off-white text-sm tracking-widest uppercase leading-none">
+        <Link to="/" className="flex items-center gap-2.5 shrink-0">
+          <img src="/logo.png" alt="3-6 Consulting" className="h-10 w-auto" />
+          <span className="font-heading text-off-white text-sm tracking-widest uppercase leading-none hidden sm:block">
             Consulting
           </span>
         </Link>

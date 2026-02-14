@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import {
-  ParallaxLayer,
   TextReveal,
   ScrollReveal,
   MagneticButton,
@@ -12,18 +11,19 @@ import Button from "../ui/Button";
 export default function Hero() {
   return (
     <section className="relative min-h-screen overflow-hidden flex items-center justify-center">
-      {/* Background with parallax */}
-      <ParallaxLayer speed={0.4} className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-bg-tertiary">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage:
-                "radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.03) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, rgba(255,255,255,0.02) 0%, transparent 50%)",
-            }}
-          />
-        </div>
-      </ParallaxLayer>
+      {/* Video background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          poster="/logo.png"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+      </div>
 
       {/* Dark gradient overlay */}
       <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/70 via-black/50 to-black/70" />

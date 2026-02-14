@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Shield } from "lucide-react";
+import { Mail } from "lucide-react";
 import { ScrollReveal, ParallaxLayer } from "../animation";
 
 export default function ContactInfo() {
@@ -8,7 +8,7 @@ export default function ContactInfo() {
       {/* Background decoration */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
         <ParallaxLayer speed={0.15}>
-          <Shield className="w-96 h-96 text-white/[0.02]" />
+          <img src="/logo.png" alt="" className="w-96 h-96 opacity-[0.03]" />
         </ParallaxLayer>
       </div>
 

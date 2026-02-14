@@ -16,8 +16,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Col 1 - Brand */}
           <div>
-            <div className="font-heading text-2xl text-gold tracking-wide">
-              3-6 <span className="text-off-white">CONSULTING</span>
+            <div className="flex items-center gap-3">
+              <img src="/logo.png" alt="3-6 Consulting" className="h-12 w-auto" />
+              <span className="font-heading text-2xl text-gold tracking-wide">
+                3-6 <span className="text-off-white">CONSULTING</span>
+              </span>
             </div>
             <p className="mt-4 text-light-gray leading-relaxed">
               Protecting what matters most.
