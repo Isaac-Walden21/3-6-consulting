@@ -11,8 +11,6 @@ interface CourseCardProps {
 }
 
 export default function CourseCard({ course, index, reversed }: CourseCardProps) {
-  const Icon = course.icon;
-
   return (
     <Container>
       <div
@@ -23,8 +21,13 @@ export default function CourseCard({ course, index, reversed }: CourseCardProps)
         {/* Image side */}
         <div className="lg:w-1/2">
           <ScrollReveal direction={reversed ? "right" : "left"}>
-            <div className="bg-bg-tertiary rounded-xl aspect-video flex items-center justify-center">
-              <Icon className="w-20 h-20 text-gold/20" />
+            <div className="bg-bg-tertiary rounded-xl aspect-video overflow-hidden">
+              <img
+                src={course.image}
+                alt={course.title}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
             </div>
           </ScrollReveal>
         </div>

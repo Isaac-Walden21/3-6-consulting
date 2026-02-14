@@ -7,7 +7,7 @@ export default function CoursesHero() {
       <Container className="text-center">
         <SectionHeading
           title="TRAINING PROGRAMS"
-          subtitle="Six specialized courses designed to prepare your church security team for any situation."
+          subtitle="Six specialized courses designed to prepare your security team for any situation."
         />
       </Container>
     </section>

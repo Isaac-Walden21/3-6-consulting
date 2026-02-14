@@ -7,7 +7,7 @@ export default function ContactHero() {
       <Container className="text-center">
         <SectionHeading
           title="GET IN TOUCH"
-          subtitle="Ready to discuss your church's security training needs? We'd love to hear from you."
+          subtitle="Ready to discuss your security training needs? We'd love to hear from you."
         />
       </Container>
     </section>

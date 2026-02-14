@@ -1,4 +1,3 @@
-import { Shield } from "lucide-react";
 import { ParallaxLayer, TextReveal } from "../animation";
 import SectionHeading from "../ui/SectionHeading";
 import Container from "../layout/Container";
@@ -13,16 +12,21 @@ export default function MissionStatement() {
             <SectionHeading title="OUR MISSION" centered={false} />
             <div className="w-20 h-1 bg-gold mt-6 mb-8" aria-hidden="true" />
             <TextReveal
-              text="We exist to equip churches with the training, knowledge, and confidence to protect their congregations. Through scenario-based instruction and real-world expertise, we prepare security teams to respond decisively when it matters most."
+              text="We exist to equip churches, schools, and organizations with the training, knowledge, and confidence to protect the people they serve. Through scenario-based instruction and real-world expertise, we prepare security teams to respond decisively when it matters most."
               className="text-light-gray text-lg leading-relaxed"
               delay={0.2}
             />
           </div>
 
-          {/* Right column — placeholder image */}
+          {/* Right column — image */}
           <ParallaxLayer speed={0.2}>
-            <div className="rounded-lg overflow-hidden bg-bg-tertiary aspect-video flex items-center justify-center">
-              <Shield className="w-20 h-20 text-gold/20" />
+            <div className="rounded-lg overflow-hidden bg-bg-tertiary aspect-video">
+              <img
+                src="/images/mission.jpg"
+                alt="Security training team"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
             </div>
           </ParallaxLayer>
         </div>

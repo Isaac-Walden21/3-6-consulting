@@ -21,7 +21,7 @@ export default function Hero() {
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         <ScrollReveal delay={0.1}>
           <Badge variant="gold" className="mb-8">
-            Church Security Training
+            Security Training &amp; Consulting
           </Badge>
         </ScrollReveal>
 
@@ -33,8 +33,9 @@ export default function Hero() {
 
         <ScrollReveal delay={0.5}>
           <p className="text-light-gray text-lg md:text-xl max-w-2xl mx-auto mt-6">
-            Professional security training and consulting for houses of worship.
-            Because every congregation deserves to feel safe.
+            Professional security training and consulting for churches,
+            schools, and corporate offices. Because the people you serve
+            deserve to feel safe.
           </p>
         </ScrollReveal>
 

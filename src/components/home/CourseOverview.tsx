@@ -12,7 +12,7 @@ export default function CourseOverview() {
       <Container>
         <SectionHeading
           title="TRAINING PROGRAMS"
-          subtitle="Comprehensive courses designed for church security teams of every experience level."
+          subtitle="Comprehensive courses designed for security teams of every experience level."
         />
 
         <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">

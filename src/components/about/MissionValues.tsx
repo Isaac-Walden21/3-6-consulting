@@ -14,7 +14,7 @@ const values: Value[] = [
     icon: Cross,
     title: "Faith-Driven",
     description:
-      "Our work is rooted in faith and service to the church community.",
+      "Our work is rooted in faith and a commitment to serving others.",
   },
   {
     icon: Award,
@@ -32,7 +32,7 @@ const values: Value[] = [
     icon: Users,
     title: "Community",
     description:
-      "We build relationships and support networks among church security teams.",
+      "We build relationships and support networks among security teams.",
   },
 ];
 
@@ -50,8 +50,8 @@ export default function MissionValues() {
               &ldquo;
             </span>
             <p className="font-heading text-2xl md:text-3xl text-off-white uppercase italic -mt-6">
-              To equip every house of worship with the training and confidence
-              to protect their congregation.
+              To equip every organization with the training and confidence
+              to protect the people they serve.
             </p>
             <span
               className="text-gold text-6xl font-heading leading-none block mt-2"

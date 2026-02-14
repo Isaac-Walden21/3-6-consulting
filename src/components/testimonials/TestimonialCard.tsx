@@ -23,7 +23,7 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
           {testimonial.name}
         </p>
         <p className="text-gold text-sm mt-1">
-          {testimonial.role}, {testimonial.church}
+          {testimonial.role}, {testimonial.organization}
         </p>
       </div>
     </div>

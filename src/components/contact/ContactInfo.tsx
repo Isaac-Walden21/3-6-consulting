@@ -23,7 +23,7 @@ export default function ContactInfo() {
           <p className="text-light-gray leading-relaxed mb-12">
             Whether you&apos;re looking to schedule a training session, have
             questions about our courses, or want to discuss a custom program for
-            your church, we&apos;re here to help.
+            your organization, we&apos;re here to help.
           </p>
 
           <motion.a

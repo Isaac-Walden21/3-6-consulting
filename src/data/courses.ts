@@ -26,6 +26,7 @@ export const courses: Course[] = [
       "Real-time scenario exercises",
     ],
     icon: ShieldAlert,
+    image: "/images/course-incident.jpg",
   },
   {
     id: 2,
@@ -33,7 +34,7 @@ export const courses: Course[] = [
     duration: "4 hours",
     type: "hands-on",
     description:
-      "Hands-on medical training covering the critical skills every church security team member needs. This course combines CPR certification with Stop the Bleed techniques, ensuring your team can respond to medical emergencies with confidence.",
+      "Hands-on medical training covering the critical skills every security team member needs. This course combines CPR certification with Stop the Bleed techniques, ensuring your team can respond to medical emergencies with confidence.",
     topics: [
       "CPR certification training",
       "Stop the Bleed techniques",
@@ -43,23 +44,25 @@ export const courses: Course[] = [
       "Equipment familiarization",
     ],
     icon: Heart,
+    image: "/images/course-medical.jpg",
   },
   {
     id: 3,
-    title: "Fundamentals of Armed Church Security",
+    title: "Fundamentals of Armed Security",
     duration: "4 hours",
     type: "hands-on",
     description:
-      "A thorough introduction to armed security in a house of worship. This course covers legal considerations, firearms safety, tactical positioning, and the unique challenges of providing armed protection in a church environment.",
+      "A thorough introduction to armed security for any facility. This course covers legal considerations, firearms safety, tactical positioning, and the unique challenges of providing armed protection in churches, schools, and corporate environments.",
     topics: [
-      "Legal framework for armed church security",
+      "Legal framework for armed security",
       "Firearms safety and handling",
-      "Tactical positioning in worship spaces",
+      "Tactical positioning in your facility",
       "Threat identification and response",
       "Use of force considerations",
       "Coordination with law enforcement",
     ],
     icon: Shield,
+    image: "/images/course-armed.jpg",
   },
   {
     id: 4,
@@ -67,7 +70,7 @@ export const courses: Course[] = [
     duration: "2 hours",
     type: "classroom",
     description:
-      "An educational presentation designed for church leadership and congregation members. This classroom course covers awareness, prevention, and the fundamentals of surviving an active shooter event.",
+      "An educational presentation designed for leadership and staff. This classroom course covers awareness, prevention, and the fundamentals of surviving an active shooter event.",
     topics: [
       "Threat recognition and warning signs",
       "Run-Hide-Fight methodology",
@@ -77,6 +80,7 @@ export const courses: Course[] = [
       "Post-incident recovery",
     ],
     icon: Presentation,
+    image: "/images/course-presentation.jpg",
   },
   {
     id: 5,
@@ -94,14 +98,15 @@ export const courses: Course[] = [
       "After-action review and improvement",
     ],
     icon: Target,
+    image: "/images/course-scenario.jpg",
   },
   {
     id: 6,
-    title: "Understanding Church Lawsuits",
+    title: "Understanding Security Liability",
     duration: "1 hour",
     type: "classroom",
     description:
-      "A critical overview of the legal landscape surrounding church security. Learn about liability, duty of care, and how proper training and documentation can protect your church from legal exposure.",
+      "A critical overview of the legal landscape surrounding facility security. Learn about liability, duty of care, and how proper training and documentation can protect your organization from legal exposure.",
     topics: [
       "Common liability scenarios",
       "Duty of care obligations",
@@ -111,5 +116,6 @@ export const courses: Course[] = [
       "Case study analysis",
     ],
     icon: Scale,
+    image: "/images/course-liability.jpg",
   },
 ];

@@ -7,7 +7,7 @@ export default function AboutHero() {
       <Container className="text-center">
         <SectionHeading
           title="ABOUT 3-6 CONSULTING"
-          subtitle="Faith-driven security training built on real-world experience."
+          subtitle="Professional security training built on real-world experience."
         />
       </Container>
     </section>

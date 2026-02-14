@@ -8,13 +8,13 @@ export default function HomeCTA() {
       <Container className="text-center">
         <ScrollReveal>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-bg-primary uppercase">
-            Ready to Protect Your Congregation?
+            Ready to Protect Your People?
           </h2>
         </ScrollReveal>
 
         <ScrollReveal delay={0.15}>
           <p className="text-bg-primary/80 max-w-2xl mx-auto mt-4">
-            Take the first step toward a safer church. Our team is ready to
+            Take the first step toward a safer environment. Our team is ready to
             design a training program tailored to your specific needs.
           </p>
         </ScrollReveal>

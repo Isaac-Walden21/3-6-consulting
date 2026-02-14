@@ -8,13 +8,14 @@ export interface Course {
   description: string;
   topics: string[];
   icon: LucideIcon;
+  image: string;
 }
 
 export interface Testimonial {
   id: number;
   name: string;
   role: string;
-  church: string;
+  organization: string;
   quote: string;
 }
 
