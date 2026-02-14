@@ -7,27 +7,16 @@ import {
 } from "../animation";
 import Badge from "../ui/Badge";
 import Button from "../ui/Button";
+import VideoPlayer from "../ui/VideoPlayer";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden flex items-center justify-center">
-      {/* Video background */}
-      <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-          poster="/logo.png"
-        >
-          <source src="/hero-video.mp4" type="video/mp4" />
-        </video>
-      </div>
-
-      {/* Dark gradient overlay */}
-      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
-
+    <VideoPlayer
+      src="/hero-video.mp4"
+      poster="/logo.png"
+      className="min-h-screen overflow-hidden flex items-center justify-center"
+      overlayClassName="absolute inset-0 z-[1] bg-gradient-to-b from-black/70 via-black/50 to-black/70"
+    >
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         <ScrollReveal delay={0.1}>
@@ -77,6 +66,6 @@ export default function Hero() {
       >
         <ChevronDown className="w-6 h-6 text-off-white/50" />
       </motion.div>
-    </section>
+    </VideoPlayer>
   );
 }
